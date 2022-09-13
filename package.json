@@ -1,0 +1,28 @@
+{
+  "name": "bowling-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/natalikrasnov/bowling-server.git"
+  },
+  "author": "natali krasnov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natalikrasnov/bowling-server/issues"
+  },
+  "homepage": "https://github.com/natalikrasnov/bowling-server#readme",
+  "dependencies": {
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19"
+  }
+}
