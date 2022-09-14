@@ -2,9 +2,13 @@
 	"PORT": 3004,
 	"db": {
 		"host": "127.0.0.1",
-		"database": "bowling",
+		"database": "todolist",
 		"user": "root",
 		"connectTimeout": 1500,
-		"charset": "utf8"
+		"charset": "utf8",
+		"mongoDBurl":{
+			"base": "mongodb+srv://",
+			"path": "@cluster0.6jhyd.mongodb.net/?retryWrites=true&w=majority"
+		}
 	}
 }

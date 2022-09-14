@@ -1,21 +1,28 @@
-const express = require('express');
-const cors = require("cors");
+import  express, { json } from 'express';
+import cors from "cors";
 
-const usersRouter = require('./routers/users');
-const scoresRouter = require("./routers/scores");
+import  router  from "./routers/poll.js";
+import authenticate from './middleware/auth.js';
+import sendStatus from "./middleware/sendStatus.js";
+import mongoose from './services/mongoose.js'
+
+mongoose().catch((err) => console.log(err));
 
 const corsOptions ={
-   origin:'*', 
-   //credentials:true,            //access-control-allow-credentials:true
-   //optionSuccessStatus:200,
+   origin:'*'
 }
 
 const app = express();
 app.use(cors(corsOptions)) 
 
-app.use(express.json());
+app.use(json());
 
-app.use(usersRouter);
-app.use(scoresRouter);
+app.use(authenticate);
 
-module.exports = app;
+app.use(router);
+
+app.use(sendStatus.success);
+app.use(sendStatus.fail);
+
+
+export default app;
